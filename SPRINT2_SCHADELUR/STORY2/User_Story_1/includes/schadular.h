@@ -18,8 +18,8 @@ void (*Tasks_Arr[NUMBER_OF_TASK])(void);/*STORY 1 array of pointer to fun that s
 typedef struct 
 {
 	void(*ptr_func)(void);   /*Pointer to function*/
-	uint8 Task_Periodicity;	 /*Task periodicity*/
-	uint8 Remaining_Ticks;		/*Remaining Ticks*/
+	uint16 Task_Periodicity;	 /*Task periodicity*/
+	uint16 Remaining_Ticks;		/*Remaining Ticks*/
 }Task;
 
 

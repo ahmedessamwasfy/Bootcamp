@@ -64,7 +64,8 @@ static void prefield()
 	  if(Task_Arr[i].Remaining_Ticks==0)
 	  {
 		  Task_Arr[i].ptr_func();
-		  Task_Arr[i].Remaining_Ticks==Task_Arr[i].Task_Periodicity;
+		  Task_Arr[i].Remaining_Ticks=Task_Arr[i].Task_Periodicity;
+		  
 	  }
 	}
 }

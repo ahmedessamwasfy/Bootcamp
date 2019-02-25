@@ -11,7 +11,7 @@ Allocating common symbols
 Common symbol       size              file
 
 global_ptr          0x2               _TIMER_/_TIMER_.o
-Task_Arr            0xc               schadular/schadular.o
+Task_Arr            0x12              schadular/schadular.o
 Tasks_Arr           0x6               main.o
 
 Discarded input sections
@@ -214,7 +214,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x782
+.text           0x00000000      0x818
  *(.vectors)
  .vectors       0x00000000       0x54 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega32/avr5/crtatmega32.o
                 0x00000000                __vector_default
@@ -301,39 +301,39 @@ END GROUP
  .text.DIO_SetPinDirection
                 0x00000242      0x1b0 DIO/DIO.o
                 0x00000242                DIO_SetPinDirection
- .text.main     0x000003f2       0x8e main.o
+ .text.main     0x000003f2       0xa6 main.o
                 0x000003f2                main
  .text.SET_FLAG
-                0x00000480       0x16 schadular/schadular.o
-                0x00000480                SET_FLAG
+                0x00000498       0x16 schadular/schadular.o
+                0x00000498                SET_FLAG
  .text.schadular_init_start
-                0x00000496       0x26 schadular/schadular.o
-                0x00000496                schadular_init_start
+                0x000004ae       0x26 schadular/schadular.o
+                0x000004ae                schadular_init_start
  .text.prefield
-                0x000004bc       0x84 schadular/schadular.o
+                0x000004d4       0xe2 schadular/schadular.o
  .text.scheduler_Add_Task
-                0x00000540       0xe6 schadular/schadular.o
-                0x00000540                scheduler_Add_Task
- .text.GO       0x00000626       0x28 Task/Task.o
-                0x00000626                GO
- .text.STOP     0x0000064e       0x28 Task/Task.o
-                0x0000064e                STOP
- .text.READY    0x00000676       0x28 Task/Task.o
-                0x00000676                READY
+                0x000005b6      0x106 schadular/schadular.o
+                0x000005b6                scheduler_Add_Task
+ .text.GO       0x000006bc       0x28 Task/Task.o
+                0x000006bc                GO
+ .text.STOP     0x000006e4       0x28 Task/Task.o
+                0x000006e4                STOP
+ .text.READY    0x0000070c       0x28 Task/Task.o
+                0x0000070c                READY
  .text.__vector_10
-                0x0000069e       0x62 _TIMER_/_TIMER_.o
-                0x0000069e                __vector_10
+                0x00000734       0x62 _TIMER_/_TIMER_.o
+                0x00000734                __vector_10
  .text.set_call_back
-                0x00000700       0x26 _TIMER_/_TIMER_.o
-                0x00000700                set_call_back
+                0x00000796       0x26 _TIMER_/_TIMER_.o
+                0x00000796                set_call_back
  .text.timer0_init_CTC_mode
-                0x00000726       0x58 _TIMER_/_TIMER_.o
-                0x00000726                timer0_init_CTC_mode
-                0x0000077e                . = ALIGN (0x2)
+                0x000007bc       0x58 _TIMER_/_TIMER_.o
+                0x000007bc                timer0_init_CTC_mode
+                0x00000814                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000077e        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
-                0x0000077e                _exit
-                0x0000077e                exit
+ .fini9         0x00000814        0x0 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+                0x00000814                _exit
+                0x00000814                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -352,11 +352,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000077e        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000814        0x4 c:/program files (x86)/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/5.4.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000782                _etext = .
+                0x00000818                _etext = .
 
-.data           0x00800060        0x0 load address 0x00000782
+.data           0x00800060        0x0 load address 0x00000818
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -368,7 +368,7 @@ END GROUP
                 0x00800060                _edata = .
                 0x00800060                PROVIDE (__data_end, .)
 
-.bss            0x00800060       0x13
+.bss            0x00800060       0x19
                 0x00800060                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
@@ -377,19 +377,19 @@ END GROUP
  .bss.index     0x00800061        0x4 schadular/schadular.o
                 0x00800061                index
  *(COMMON)
- COMMON         0x00800065        0xc schadular/schadular.o
+ COMMON         0x00800065       0x12 schadular/schadular.o
                 0x00800065                Task_Arr
- COMMON         0x00800071        0x2 _TIMER_/_TIMER_.o
-                0x00800071                global_ptr
-                0x00800073                PROVIDE (__bss_end, .)
-                0x00000782                __data_load_start = LOADADDR (.data)
-                0x00000782                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00800077        0x2 _TIMER_/_TIMER_.o
+                0x00800077                global_ptr
+                0x00800079                PROVIDE (__bss_end, .)
+                0x00000818                __data_load_start = LOADADDR (.data)
+                0x00000818                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00800073        0x0
+.noinit         0x00800079        0x0
                 [!provide]                PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                PROVIDE (__noinit_end, .)
-                0x00800073                _end = .
+                0x00800079                _end = .
                 [!provide]                PROVIDE (__heap_start, .)
 
 .eeprom         0x00810000        0x0
@@ -474,14 +474,14 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0xb04
+.debug_info     0x00000000      0xb0f
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000      0x4e6 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_info    0x000004e6      0x104 DIO/DIO.o
  .debug_info    0x000005ea      0x142 main.o
- .debug_info    0x0000072c      0x1e7 schadular/schadular.o
- .debug_info    0x00000913       0xd4 Task/Task.o
- .debug_info    0x000009e7      0x11d _TIMER_/_TIMER_.o
+ .debug_info    0x0000072c      0x1f2 schadular/schadular.o
+ .debug_info    0x0000091e       0xd4 Task/Task.o
+ .debug_info    0x000009f2      0x11d _TIMER_/_TIMER_.o
 
 .debug_abbrev   0x00000000      0x858
  *(.debug_abbrev)
@@ -492,14 +492,14 @@ END GROUP
  .debug_abbrev  0x0000071a       0x84 Task/Task.o
  .debug_abbrev  0x0000079e       0xba _TIMER_/_TIMER_.o
 
-.debug_line     0x00000000      0x6ee
+.debug_line     0x00000000      0x6f4
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x115 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_line    0x00000115      0x239 DIO/DIO.o
  .debug_line    0x0000034e       0xc5 main.o
- .debug_line    0x00000413      0x16f schadular/schadular.o
- .debug_line    0x00000582       0xa2 Task/Task.o
- .debug_line    0x00000624       0xca _TIMER_/_TIMER_.o
+ .debug_line    0x00000413      0x175 schadular/schadular.o
+ .debug_line    0x00000588       0xa2 Task/Task.o
+ .debug_line    0x0000062a       0xca _TIMER_/_TIMER_.o
 
 .debug_frame    0x00000000      0x268
  *(.debug_frame)
@@ -514,13 +514,13 @@ END GROUP
  .debug_str     0x00000000      0x196 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.2.209/gcc/dev/atmega32/avr5/crtatmega32.o
  .debug_str     0x00000196      0x199 DIO/DIO.o
                                 0x1cd (size before relaxing)
- .debug_str     0x0000032f       0xba main.o
-                                0x1f4 (size before relaxing)
- .debug_str     0x000003e9       0x64 schadular/schadular.o
-                                0x23a (size before relaxing)
- .debug_str     0x0000044d       0x1a Task/Task.o
+ .debug_str     0x0000032f       0xc1 main.o
+                                0x1f5 (size before relaxing)
+ .debug_str     0x000003f0       0x64 schadular/schadular.o
+                                0x241 (size before relaxing)
+ .debug_str     0x00000454       0x1a Task/Task.o
                                 0x18c (size before relaxing)
- .debug_str     0x00000467       0x5b _TIMER_/_TIMER_.o
+ .debug_str     0x0000046e       0x54 _TIMER_/_TIMER_.o
                                 0x1e5 (size before relaxing)
 
 .debug_loc      0x00000000      0x44a

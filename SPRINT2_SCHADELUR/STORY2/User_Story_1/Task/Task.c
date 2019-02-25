@@ -10,7 +10,7 @@ void STOP(void)
 {
 	DIO_WritePin(LED1,LOW); /*STOP State*/
 	DIO_WritePin(LED2,LOW);
-	DIO_WritePin(LED3,LOW);	
+	DIO_WritePin(LED3,HIGH);	
 }
 void READY(void)
 {	
