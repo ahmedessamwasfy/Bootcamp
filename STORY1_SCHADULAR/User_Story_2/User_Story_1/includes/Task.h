@@ -6,6 +6,10 @@
 #include "../includes/DIO.h"
 #include "../includes/Types.h"
 #include "../includes/BitwiseOperations.h"
+#define ONE_SECOUND 1000
+#define TWO_SECOND 2000
+#define THREE_SECOUND 3000
+
 
 
 void GO(void);
