@@ -1,0 +1,11 @@
+#include "uart.h"
+
+
+//------------UART_Init------------
+// Initialize the UART for 115200 baud rate (assuming 80 MHz UART clock),
+// 8 bit word length, no parity bits, one stop bit, FIFOs enabled
+// Input: none
+// Output: none
+void UART_Init(void){
+
+}

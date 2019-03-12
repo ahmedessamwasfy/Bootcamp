@@ -1,0 +1,8 @@
+
+**** Build of configuration Debug for project Tiva_Project ****
+
+"C:\\ti\\ccsv8\\utils\\bin\\gmake" -k -j 4 all -O 
+ 
+gmake[1]: 'Tiva_Project.out' is up to date.
+
+**** Build Finished ****

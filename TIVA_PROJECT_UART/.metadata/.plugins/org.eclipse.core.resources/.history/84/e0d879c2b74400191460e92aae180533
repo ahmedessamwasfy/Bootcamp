@@ -1,0 +1,33 @@
+
+#include <stdint.h>
+#include <stdbool.h>
+#include "inc/hw_memmap.h"
+#include "driverlib/debug.h"
+#include "driverlib/gpio.h"
+#include "driverlib/sysctl.h"
+#include "driverlib/uart.h"
+#include "Types.h"
+#include "uart.h"
+
+
+int main()
+{
+
+    uint8 data;/*local variable to store the 8bit data from UART to UART */
+    UART_Init();
+
+    while(1)
+    {
+     /*wait until the data buffer is empty and i can send or receive */
+     while(!UARTCharsAvail(UART0_BASE))
+    {
+    }
+
+     /* Get the character(s) in the receive FIFO.recive data from FIFO by UART and load it in data variable */
+     uint8 data = UARTCharGetNonBlocking(UART0_BASE);
+
+     /* Put a character in the output buffer. send data by UART buffer */
+     UARTCharPut(UART0_BASE, data);/* send  1 byte */
+    }
+
+}

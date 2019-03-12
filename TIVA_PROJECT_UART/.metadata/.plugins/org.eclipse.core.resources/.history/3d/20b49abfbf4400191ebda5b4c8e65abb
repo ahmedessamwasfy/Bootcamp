@@ -1,0 +1,20 @@
+
+#ifndef UART_CFG_H_
+#define UART_CFG_H_
+#include "uart.h"
+#include "Types.h"
+
+#define F_CPU 16000000UL
+#define FREQUENCY 16
+
+#define BAUDRATE    38400 /* Baud rate */
+#define NO_STOPBIT   UART_CONFIG_STOP_ONE
+#define PARITYMODE  UART_CONFIG_PAR_NONE
+#define DATASIZE    UART_CONFIG_WLEN_8
+
+
+
+
+
+
+#endif /* UART_CFG_H_ */

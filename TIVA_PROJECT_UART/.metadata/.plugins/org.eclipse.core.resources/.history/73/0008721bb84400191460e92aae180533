@@ -1,0 +1,42 @@
+#include "uart.h"
+
+
+//------------UART_Init------------
+// Initialize the UART for 115200 baud rate (assuming 80 MHz UART clock),
+// 8 bit word length, no parity bits, one stop bit, FIFOs enabled
+// Input: none
+// Output: none
+void UART_Init(void){
+    UART_STRCT CONFIG ;
+       CONFIG.BaudRate=BAUDRATE;
+       CONFIG.Data_Size=DATASIZE;
+       CONFIG.No_StopBits=NO_STOPBIT;
+       CONFIG.Parity_Mode=PARITYMODE;
+
+    // Initialize the UART. Set the baud rate, number of data bits, turn off
+    // parity, number of stop bits, and stick mode. The UART is enabled by the
+    // function call.
+    //
+       UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), CONFIG.BaudRate,
+      (CONFIG.Data_Size | CONFIG.No_StopBits |CONFIG.Parity_Mode));
+    //
+    // Enable the UART0 module.
+    //
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
+    //
+    // Wait for the UART0 module to be ready.
+    //
+    while(!SysCtlPeripheralReady(SYSCTL_PERIPH_UART0))
+    {
+    }
+
+    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
+           //
+           // Set GPIO A0 and A1 as UART pins.
+           //
+           GPIOPinConfigure(GPIO_PA0_U0RX);
+           GPIOPinConfigure(GPIO_PA1_U0TX);
+           GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
+
+
+}
