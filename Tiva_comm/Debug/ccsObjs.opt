@@ -1,0 +1,1 @@
+"./LCD.obj" "./main.obj" "./tm4c123gh6pm_startup_ccs.obj" "./Debouncing/Debouncing.obj" "./K2D/K2D_Task.obj" "./K2T/K2T_Task.obj" "./KeyPad/KeyPad.obj" "./OS/Scheduler.obj" "./Timer/Systick.obj" "./Uart/uart.obj" "../tm4c123gh6pm.cmd" -llibc.a -l"C:/ti/TivaWare_C_Series-2.1.4.178/driverlib/ccs/Debug/driverlib.lib" 
