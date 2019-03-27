@@ -1,0 +1,212 @@
+******************************************************************************
+                  TI ARM Linker PC v18.1.1                     
+******************************************************************************
+>> Linked Tue Mar 26 18:40:35 2019
+
+OUTPUT FILE NAME:   <DIO_AutoSar.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 00000c71
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00000cfe  0003f302  R  X
+  SRAM                  20000000   00008000  0000023f  00007dc1  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00000d04   00000d04    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  0000026c    0000026c    00000a5e   00000a5e    r-x .text
+  00000cd0    00000cd0    00000034   00000034    r-- .cinit
+20000000    20000000    0000023f   00000000    rw-
+  20000000    20000000    00000200   00000000    rw- .stack
+  20000200    20000200    0000003f   00000000    rw- .data
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    0000026c    00000a5e     
+                  0000026c    000007b4     Dio.obj (.text)
+                  00000a20    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  00000abc    0000008c     Det.obj (.text)
+                  00000b48    0000007c     main.obj (.text)
+                  00000bc4    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  00000c2c    00000044                                   : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00000c70    00000038                                   : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00000ca8    0000000e                                   : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  00000cb6    0000000c     tm4c123gh6pm_startup_ccs.obj (.text)
+                  00000cc2    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00000cc6    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.cinit     0    00000cd0    00000034     
+                  00000cd0    00000024     (.cinit..data.load) [load image, compression = lzss]
+                  00000cf4    00000008     (__TI_handler_table)
+                  00000cfc    00000008     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.data      0    20000200    0000003f     UNINITIALIZED
+                  20000200    00000020     Dio_Lcfg.obj (.data:Channel_struct)
+                  20000220    00000010     Dio_Lcfg.obj (.data:Port_g)
+                  20000230    0000000c     Dio_Lcfg.obj (.data:channel_group)
+                  2000023c    00000003     main.obj (.data:structx)
+
+.stack     0    20000000    00000200     UNINITIALIZED
+                  20000000    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000004    000001fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       Dio.obj                        1972   0         0      
+       tm4c123gh6pm_startup_ccs.obj   12     620       0      
+       Det.obj                        140    0         0      
+       main.obj                       124    0         3      
+       Dio_Lcfg.obj                   0      0         60     
+    +--+------------------------------+------+---------+---------+
+       Total:                         2248   620       63     
+                                                              
+    C:\ti\ccsv8\tools\compiler\ti-cgt-arm_18.1.1.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj              156    0         0      
+       copy_decompress_lzss.c.obj     104    0         0      
+       autoinit.c.obj                 68     0         0      
+       boot_cortex_m.c.obj            56     0         0      
+       copy_decompress_none.c.obj     14     0         0      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         406    0         0      
+                                                              
+       Stack:                         0      0         512    
+       Linker Generated:              0      52        0      
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   2654   672       575    
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00000cfc records: 1, size/record: 8, table size: 8
+	.data: load addr=00000cd0, load size=00000024 bytes, run addr=20000200, run size=0000003f bytes, compression=lzss
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00000cf4 records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00000cc7  C$$EXIT                       
+20000200  Channel_struct                
+00000abd  Det_ReportError               
+00000729  Dio_FlipChannel               
+0000044f  Dio_ReadChannel               
+00000851  Dio_ReadChannelGroup          
+00000661  Dio_ReadPort                  
+0000026d  Dio_WriteChannel              
+0000094b  Dio_WriteChannelGroup         
+00000591  Dio_WritePort                 
+00000b63  PortF_Init                    
+20000220  Port_g                        
+00000cb7  ResetISR                      
+20000200  __STACK_END                   
+00000200  __STACK_SIZE                  
+20000200  __STACK_TOP                   
+00000cfc  __TI_CINIT_Base               
+00000d04  __TI_CINIT_Limit              
+00000cf4  __TI_Handler_Table_Base       
+00000cfc  __TI_Handler_Table_Limit      
+00000c2d  __TI_auto_init_nobinit_nopinit
+00000bc5  __TI_decompress_lzss          
+00000ca9  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+00000000  __TI_static_base__            
+00000a21  __aeabi_memcpy                
+00000a21  __aeabi_memcpy4               
+00000a21  __aeabi_memcpy8               
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+20000000  __stack                       
+00000c71  _c_int00_noargs               
+UNDEFED   _system_post_cinit            
+00000cc3  _system_pre_init              
+00000cc7  abort                         
+ffffffff  binit                         
+20000230  channel_group                 
+00000000  g_pfnVectors                  
+00000b49  main                          
+00000a21  memcpy                        
+2000023c  structx                       
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_static_base__            
+00000000  g_pfnVectors                  
+00000200  __STACK_SIZE                  
+0000026d  Dio_WriteChannel              
+0000044f  Dio_ReadChannel               
+00000591  Dio_WritePort                 
+00000661  Dio_ReadPort                  
+00000729  Dio_FlipChannel               
+00000851  Dio_ReadChannelGroup          
+0000094b  Dio_WriteChannelGroup         
+00000a21  __aeabi_memcpy                
+00000a21  __aeabi_memcpy4               
+00000a21  __aeabi_memcpy8               
+00000a21  memcpy                        
+00000abd  Det_ReportError               
+00000b49  main                          
+00000b63  PortF_Init                    
+00000bc5  __TI_decompress_lzss          
+00000c2d  __TI_auto_init_nobinit_nopinit
+00000c71  _c_int00_noargs               
+00000ca9  __TI_decompress_none          
+00000cb7  ResetISR                      
+00000cc3  _system_pre_init              
+00000cc7  C$$EXIT                       
+00000cc7  abort                         
+00000cf4  __TI_Handler_Table_Base       
+00000cfc  __TI_CINIT_Base               
+00000cfc  __TI_Handler_Table_Limit      
+00000d04  __TI_CINIT_Limit              
+20000000  __stack                       
+20000200  Channel_struct                
+20000200  __STACK_END                   
+20000200  __STACK_TOP                   
+20000220  Port_g                        
+20000230  channel_group                 
+2000023c  structx                       
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[44 symbols]
